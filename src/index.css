@@ -100,15 +100,15 @@
   }
 
   .gradient-bg {
-    background: linear-gradient(-45deg, #3b82f6, #6366f1, #8b5cf6, #ec4899);
+    background: linear-gradient(-45deg, #F2FCE2, #FFDEE2, #E5DEFF, #D3E4FD);
     background-size: 400% 400%;
     animation: gradient-flow 15s ease infinite;
   }
   
   .interactive-sphere {
-    background: radial-gradient(circle at 50% 50%, #8b5cf6, #6366f1);
+    background: radial-gradient(circle at 50% 50%, #FFDEE2, #E5DEFF);
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 20px rgba(229, 222, 255, 0.5);
     transition: transform 0.2s ease-out;
   }
 

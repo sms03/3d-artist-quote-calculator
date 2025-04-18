@@ -7,7 +7,7 @@ interface InteractiveSphereProps {
 }
 
 const InteractiveSphere = ({ 
-  size = 200, 
+  size = 150, // Reduced from 200 to 150
   className = ""
 }: InteractiveSphereProps) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -60,7 +60,7 @@ const InteractiveSphere = ({
 
   return (
     <div 
-      className={`interactive-sphere fixed pointer-events-none animate-pulse-soft z-0 ${className}`}
+      className={`interactive-sphere fixed pointer-events-none animate-pulse-soft z-0 opacity-30 ${className}`}
       style={style}
     />
   );
