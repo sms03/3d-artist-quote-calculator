@@ -98,4 +98,26 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .gradient-bg {
+    background: linear-gradient(-45deg, #3b82f6, #6366f1, #8b5cf6, #ec4899);
+    background-size: 400% 400%;
+    animation: gradient-flow 15s ease infinite;
+  }
+  
+  .interactive-sphere {
+    background: radial-gradient(circle at 50% 50%, #8b5cf6, #6366f1);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    transition: transform 0.2s ease-out;
+  }
+
+  .service-card {
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
 }
