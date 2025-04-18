@@ -29,11 +29,14 @@ export default {
           foreground: 'hsl(var(--primary-foreground))'
         },
         design: {
-          blue: '#3b82f6',
-          purple: '#8b5cf6',
-          indigo: '#6366f1',
-          pink: '#ec4899',
-          red: '#f43f5e',
+          "soft-green": "#F2FCE2",
+          "soft-yellow": "#FEF7CD",
+          "soft-orange": "#FEC6A1",
+          "soft-purple": "#E5DEFF",
+          "soft-pink": "#FFDEE2",
+          "soft-peach": "#FDE1D3",
+          "soft-blue": "#D3E4FD",
+          "soft-gray": "#F1F0FB",
           dark: '#1e293b',
           light: '#f8fafc',
         },
@@ -60,33 +63,15 @@ export default {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))'
-        },
-        "soft-green": "#F2FCE2",
-        "soft-yellow": "#FEF7CD",
-        "soft-orange": "#FEC6A1",
-        "soft-purple": "#E5DEFF",
-        "soft-pink": "#FFDEE2",
-        "soft-peach": "#FDE1D3",
-        "soft-blue": "#D3E4FD",
-        "soft-gray": "#F1F0FB",
+        }
       },
       fontFamily: {
         "geist-mono": ["Geist Mono", "monospace"],
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-        'gradient-secondary': 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
-        'gradient-accent': 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #F2FCE2 0%, #E5DEFF 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #D3E4FD 0%, #FFDEE2 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #FEC6A1 0%, #FEF7CD 100%)',
       },
       borderRadius: {
         lg: 'var(--radius)',

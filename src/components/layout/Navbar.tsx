@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -16,12 +15,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <nav className="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50 font-geist-mono">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
-              <div className="h-8 w-8 bg-gradient-to-br from-design-blue to-design-purple rounded-md"></div>
+              <div className="h-8 w-8 bg-gradient-to-br from-design-soft-pink to-design-soft-purple rounded-md"></div>
               <span className="ml-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-primary">
                 3D Price Craft
               </span>
@@ -35,7 +34,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-design-purple hover:bg-gray-100 transition-colors"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-black hover:bg-design-soft-purple/20 transition-colors"
                 >
                   {item.name}
                 </Link>

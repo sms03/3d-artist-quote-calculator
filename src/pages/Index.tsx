@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -50,7 +49,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 md:py-24 text-center">
+      <section className="py-16 md:py-24 text-center font-geist-mono">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-primary">
             3D Design Pricing Calculator
@@ -59,7 +58,7 @@ const Index = () => {
             Transparent pricing for all your 3D design, animation, and visual effects needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="text-lg px-8">
+            <Button asChild size="lg" className="text-lg px-8 bg-design-soft-purple hover:bg-design-soft-blue">
               <Link to="/3d-still-frame">Get Started</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8">
@@ -70,7 +69,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16">
+      <section id="services" className="py-16 font-geist-mono">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Our Services</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -80,10 +79,10 @@ const Index = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="service-card overflow-hidden">
+            <Card key={index} className="service-card overflow-hidden bg-white/80 backdrop-blur-sm">
               <div className="p-6">
-                <div className="h-12 w-12 rounded-full bg-design-purple/10 flex items-center justify-center mb-4">
-                  <service.icon className="h-6 w-6 text-design-purple" />
+                <div className="h-12 w-12 rounded-full bg-design-soft-purple/20 flex items-center justify-center mb-4">
+                  <service.icon className="h-6 w-6 text-black" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
@@ -100,7 +99,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+      <section className="py-16 bg-design-soft-gray/30 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 font-geist-mono">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Features</h2>
           <p className="text-xl text-gray-600">
@@ -154,7 +153,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 text-center">
+      <section className="py-16 text-center font-geist-mono">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-8">
