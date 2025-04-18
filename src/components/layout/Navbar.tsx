@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <div className="h-8 w-8 bg-gradient-to-br from-design-soft-pink to-design-soft-purple rounded-md"></div>
-              <span className="ml-2 font-bold bg-clip-text bg-gradient-primary text-[design-soft-peach] text-[#fed7d0]">
+              <span className="ml-2 font-bold bg-clip-text bg-gradient-primary text-[#fed7d0] text-lg">
                 3D Price Craft
               </span>
             </Link>
