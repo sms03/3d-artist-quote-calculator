@@ -1,4 +1,3 @@
-
 // Exchange rates for currency conversion (last updated placeholder - would use API in production)
 export const exchangeRates = {
   INR: 1, // Base currency
@@ -151,14 +150,14 @@ export const calculatePrice = (
   return Math.round(price / 100) * 100;
 };
 
-// Calculate GST amount
-export const calculateGST = (price: number): number => {
-  return price * GST_RATE;
+// Calculate GST amount - only for Indian currency
+export const calculateGST = (price: number, currency: Currency): number => {
+  return currency === "INR" ? price * GST_RATE : 0;
 };
 
-// Calculate total price with GST
-export const calculateTotalWithGST = (price: number): number => {
-  return price + calculateGST(price);
+// Calculate total price with GST (if applicable)
+export const calculateTotalWithGST = (price: number, currency: Currency): number => {
+  return price + calculateGST(price, currency);
 };
 
 // Convert price to another currency

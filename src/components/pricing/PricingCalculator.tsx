@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { 
   calculatePrice,
@@ -96,9 +95,9 @@ const PricingCalculator = ({
     );
     
     setBasePrice(price);
-    setGstAmount(calculateGST(price));
-    setTotalPrice(calculateTotalWithGST(price));
-  }, [serviceType, resolution, aspectRatio, duration, frameRate, dpi, outputFormat]);
+    setGstAmount(calculateGST(price, currency));
+    setTotalPrice(calculateTotalWithGST(price, currency));
+  }, [serviceType, resolution, aspectRatio, duration, frameRate, dpi, outputFormat, currency]);
   
   // Handle preset saving
   const handleSavePreset = () => {
@@ -192,7 +191,7 @@ const PricingCalculator = ({
   
   return (
     <Card className="p-6 shadow-lg">
-      <h2 className="text-2xl font-bold mb-6">{serviceType} Pricing Calculator</h2>
+      <h2 className="text-2xl font-bold mb-6 font-geist-mono text-black">{serviceType} Pricing Calculator</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left column - Configuration options */}
@@ -375,29 +374,33 @@ const PricingCalculator = ({
           </div>
           
           {/* Price Breakdown */}
-          <div className="bg-gray-50 p-4 rounded-md">
-            <h3 className="text-lg font-semibold mb-3">Price Breakdown</h3>
+          <div className="bg-soft-gray p-4 rounded-md">
+            <h3 className="text-lg font-semibold mb-3 font-geist-mono text-black">Price Breakdown</h3>
             
-            <div className="flex justify-between mb-2">
+            <div className="flex justify-between mb-2 font-geist-mono">
               <span>Base Price:</span>
               <span className="font-medium">{formatCurrency(convertCurrency(basePrice, "INR", currency), currency)}</span>
             </div>
             
-            <div className="flex justify-between mb-2">
-              <span>GST (18%):</span>
-              <span className="font-medium">{formatCurrency(convertCurrency(gstAmount, "INR", currency), currency)}</span>
-            </div>
+            {currency === "INR" && (
+              <div className="flex justify-between mb-2 font-geist-mono">
+                <span>GST (18%):</span>
+                <span className="font-medium">{formatCurrency(gstAmount, currency)}</span>
+              </div>
+            )}
             
             <Separator className="my-3" />
             
-            <div className="flex justify-between text-lg font-bold">
+            <div className="flex justify-between text-lg font-bold font-geist-mono">
               <span>Total:</span>
               <span>{formatCurrency(convertCurrency(totalPrice, "INR", currency), currency)}</span>
             </div>
             
-            <p className="text-xs text-gray-500 mt-3">
-              *GST @ 18% will be applicable as per Indian Government regulations
-            </p>
+            {currency === "INR" && (
+              <p className="text-xs text-gray-500 mt-3 font-geist-mono">
+                *GST @ 18% will be applicable as per Indian Government regulations
+              </p>
+            )}
           </div>
           
           {/* Action Buttons */}
