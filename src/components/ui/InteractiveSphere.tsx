@@ -7,7 +7,7 @@ interface InteractiveSphereProps {
 }
 
 const InteractiveSphere = ({ 
-  size = 150, // Reduced from 200 to 150
+  size = 100, // Reduced from 150 to 100
   className = ""
 }: InteractiveSphereProps) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });

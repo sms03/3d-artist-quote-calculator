@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { 
   calculatePrice,
@@ -195,7 +194,19 @@ const PricingCalculator = ({
             onSavePreset={handleSavePreset}
             onLoadPreset={handleLoadPreset}
             onDeletePreset={handleDeletePreset}
-            onGeneratePDF={generatePDF}
+            currentConfig={{
+              serviceType,
+              resolution,
+              aspectRatio,
+              frameRate: showFrameRateSelector ? frameRate : undefined,
+              dpi: showDpiSelector ? dpi : undefined,
+              duration: showDurationSelector ? duration : undefined,
+              outputFormat
+            }}
+            basePrice={basePrice}
+            gstAmount={gstAmount}
+            totalPrice={totalPrice}
+            currency={currency}
           />
         </div>
       </div>
