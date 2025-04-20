@@ -5,6 +5,7 @@ import PricingCalculator from "@/components/pricing/PricingCalculator";
 const VideoEditingPage = () => {
   return (
     <Layout>
+      <section className="py-16 md:py-24 text-center font-geist-mono">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Video Editing Pricing</h1>
         <p className="text-gray-600 mb-8">
@@ -18,6 +19,7 @@ const VideoEditingPage = () => {
           showDurationSelector={true}
         />
       </div>
+      </section>
     </Layout>
   );
 };
