@@ -92,11 +92,15 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    background: linear-gradient(120deg, #f8fafc 0%, #e5deff 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   .gradient-bg {
@@ -119,5 +123,14 @@
   .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .bg-plexus-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.12;
+    background-image: repeating-linear-gradient(135deg, #e5deff33 0 2px, transparent 2px 40px), repeating-linear-gradient(45deg, #f2fce233 0 2px, transparent 2px 40px);
   }
 }

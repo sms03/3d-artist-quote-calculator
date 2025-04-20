@@ -51,9 +51,9 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-16 md:py-24 text-center font-geist-mono">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-primary">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(90deg,rgb(188, 47, 106) 0%,rgb(65, 7, 17) 100%)" }}>
             3D Design Pricing Calculator
-          </h1>
+            </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8">
             Transparent pricing for all your 3D design, animation, and visual effects needs.
           </p>
