@@ -1,74 +1,28 @@
+import Layout from "../components/layout/Layout";
 
-import Layout from "@/components/layout/Layout";
+const PricingPolicy = () => (
+  <Layout>
+    <div className="max-w-3xl mx-auto py-12">
+      <h1 className="text-3xl font-bold mb-6">Pricing Policy</h1>
+      <p className="mb-4">Last updated: April 20, 2025</p>
+      <h2 className="text-xl font-semibold mt-8 mb-2">1. Estimates & Quotes</h2>
+      <p className="mb-4">All prices provided by the calculator are estimates based on standard industry rates. Actual prices may vary depending on project requirements, complexity, revisions, and additional services.</p>
+      <h2 className="text-xl font-semibold mt-8 mb-2">2. GST & Taxes</h2>
+      <p className="mb-4">All prices are exclusive of GST. GST @ 18% will be added to the final invoice as per Indian Government regulations.</p>
+      <h2 className="text-xl font-semibold mt-8 mb-2">3. Payment Terms</h2>
+      <ul className="list-disc pl-6 mb-4">
+        <li>50% advance payment is required to start the project.</li>
+        <li>Remaining 50% is due upon project completion and before final delivery.</li>
+        <li>Payments can be made via bank transfer, UPI, or other agreed methods.</li>
+      </ul>
+      <h2 className="text-xl font-semibold mt-8 mb-2">4. Revisions & Additional Work</h2>
+      <p className="mb-4">The estimate includes a limited number of revisions as specified in the project scope. Additional revisions or services may incur extra charges, which will be communicated in advance.</p>
+      <h2 className="text-xl font-semibold mt-8 mb-2">5. Refund Policy</h2>
+      <p className="mb-4">Advance payments are non-refundable once work has commenced. Refunds, if any, are at the sole discretion of 3D Price Craft based on project status and circumstances.</p>
+      <h2 className="text-xl font-semibold mt-8 mb-2">6. Contact</h2>
+      <p>For pricing questions, contact us at <a href="mailto:contact@3dpricecraft.com" className="text-blue-600 underline">contact@3dpricecraft.com</a>.</p>
+    </div>
+  </Layout>
+);
 
-const PricingPolicyPage = () => {
-  return (
-    <Layout>
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Pricing Policy</h1>
-        
-        <div className="prose prose-lg">
-          <p>
-            Our pricing is transparent and based on industry standards for 3D design, animation, and VFX services.
-            This document outlines our pricing policy and how costs are calculated.
-          </p>
-          
-          <h2>Pricing Factors</h2>
-          <p>
-            Our pricing is calculated based on the following factors:
-          </p>
-          
-          <ul>
-            <li>Service type (3D Still Frame, 3D Animation, 3D CGI, VFX, Video Editing)</li>
-            <li>Resolution (720p, 1080p, 2K, 4K, 8K)</li>
-            <li>Aspect ratio (16:9, 4:3, 1:1, 9:16, 21:9, Custom)</li>
-            <li>Frame rates (for video content)</li>
-            <li>DPI settings (for still images)</li>
-            <li>Duration (for time-based content)</li>
-            <li>Output format</li>
-            <li>Project complexity</li>
-          </ul>
-          
-          <h2>GST Taxation</h2>
-          <p>
-            All prices are subject to 18% GST as per Indian Government regulations.
-            International clients may be exempt from GST depending on their country's tax treaties with India.
-          </p>
-          
-          <h2>Payment Terms</h2>
-          <p>
-            Standard payment terms are:
-          </p>
-          
-          <ul>
-            <li>50% deposit before project commencement</li>
-            <li>50% upon project completion and before delivery of final files</li>
-            <li>For projects exceeding ₹200,000, a different payment schedule may be arranged</li>
-          </ul>
-          
-          <h2>Currency and Exchange Rates</h2>
-          <p>
-            Our base pricing is in Indian Rupees (INR). For payments in other currencies,
-            the exchange rate will be calculated based on the rate at the time of invoice generation.
-          </p>
-          
-          <h2>Pricing Updates</h2>
-          <p>
-            Pricing may be updated periodically to reflect changes in costs, market conditions,
-            or technological advancements. Any quotes provided before a pricing update will be honored
-            for 30 days from the date of quotation.
-          </p>
-          
-          <h2>Custom Projects</h2>
-          <p>
-            For projects with unique requirements not covered by our standard pricing calculator,
-            please contact us for a custom quote. We're happy to accommodate special requests
-            and complex projects.
-          </p>
-        </div>
-      </div>
-    </Layout>
-  );
-};
-
-export default PricingPolicyPage;
+export default PricingPolicy;

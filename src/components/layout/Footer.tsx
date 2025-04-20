@@ -23,27 +23,27 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/3d-still-frame" className="text-sm text-gray-700 hover:text-black transition-colors">
+                <Link to="/StillFrame" className="text-sm text-gray-700 hover:text-black dark:hover:text-white transition-colors">
                   3D Still Frame Artwork
                 </Link>
               </li>
               <li>
-                <Link to="/3d-animations" className="text-sm text-gray-700 hover:text-black transition-colors">
+                <Link to="/Animations" className="text-sm text-gray-700 hover:text-black dark:hover:text-white transition-colors">
                   3D Animations
                 </Link>
               </li>
               <li>
-                <Link to="/3d-cgi" className="text-sm text-gray-700 hover:text-black transition-colors">
+                <Link to="/CGI" className="text-sm text-gray-700 hover:text-black dark:hover:text-white transition-colors">
                   3D CGI
                 </Link>
               </li>
               <li>
-                <Link to="/vfx-projects" className="text-sm text-gray-700 hover:text-black transition-colors">
+                <Link to="/VFX" className="text-sm text-gray-700 hover:text-black dark:hover:text-white transition-colors">
                   VFX Projects
                 </Link>
               </li>
               <li>
-                <Link to="/video-editing" className="text-sm text-gray-700 hover:text-black transition-colors">
+                <Link to="/VideoEditing" className="text-sm text-gray-700 hover:text-black dark:hover:text-white transition-colors">
                   Video Editing
                 </Link>
               </li>
@@ -62,10 +62,10 @@ const Footer = () => {
               </li>
             </ul>
             <div className="flex space-x-4">
-              <Link to="/terms" className="text-sm text-gray-700 hover:text-black transition-colors">
+              <Link to="/Terms" className="text-sm text-gray-700 hover:text-black dark:hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/pricing-policy" className="text-sm text-gray-700 hover:text-black transition-colors">
+              <Link to="/PricingPolicy" className="text-sm text-gray-700 hover:text-black dark:hover:text-white transition-colors">
                 Pricing Policy
               </Link>
             </div>
@@ -73,8 +73,8 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-6 text-center text-sm text-gray-700 space-y-2">
-          <p className="font-semibold">Disclaimer: Prices are estimates and may vary based on project specifics.</p>
-          <p>Note: This calculator provides estimates based on standard industry rates. Actual prices may vary depending on specific project requirements, revisions, and additional services.</p>
+          <p className="font-semibold">Disclaimer: Prices are estimates and may vary based on project specifics.          </p>
+          <p>Note: This calculator provides estimates based on standard industry rates. Actual prices may vary depending on specific project requirements, revisions, and additional services.          </p>
         </div>
         
         <div className="border-t border-gray-400 mt-8 pt-6 text-center text-sm text-gray-600">
