@@ -58,7 +58,7 @@ const Footer = () => {
                 Email: contact@3dpricecraft.com
               </li>
               <li className="text-sm text-gray-700">
-                Phone: +91 9876543210
+                Phone: +91 1234567890
               </li>
             </ul>
             <div className="flex space-x-4">
