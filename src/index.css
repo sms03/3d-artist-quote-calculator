@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,6 +38,7 @@
 
   * {
     border-color: hsl(var(--border));
+    font-family: 'Geist Mono', monospace;
   }
 
   body {

@@ -11,6 +11,7 @@ import VFXPage from "./pages/VFX";
 import VideoEditingPage from "./pages/VideoEditing";
 import TermsPage from "./pages/Terms";
 import PricingPolicyPage from "./pages/PricingPolicy";
+import ContactPage from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/video-editing" element={<VideoEditingPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/pricing-policy" element={<PricingPolicyPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -2,7 +2,7 @@ import Layout from "../components/layout/Layout";
 
 const Terms = () => (
   <Layout>
-    <div className="max-w-3xl mx-auto py-12">
+    <div className="max-w-3xl mx-auto py-20">
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
       <p className="mb-4">Last updated: April 20, 2025</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">1. Acceptance of Terms</h2>
