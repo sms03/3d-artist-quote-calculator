@@ -50,71 +50,105 @@ const PresetManager = ({
   const generatePDF = () => {
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.getWidth();
-    
-    // Add company logo/header
+    const pageHeight = doc.internal.pageSize.getHeight();
+
+    // Draw only a light border
+    doc.setDrawColor(180, 180, 180);
+    doc.setLineWidth(0.7);
+    doc.rect(8, 8, pageWidth - 16, pageHeight - 16, 'S');
+
+    // Header: Ren3Der centered
+    doc.setFont('courier', 'bold');
     doc.setFontSize(20);
-    doc.setFont("helvetica", "bold");
-    doc.text("3D Price Craft", pageWidth/2, 20, { align: "center" });
-    
-    // Add quote details
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text("Quotation", pageWidth/2, 35, { align: "center" });
-    doc.text(`Date: ${new Date().toLocaleDateString()}`, 20, 45);
-    
-    // Add configuration details
-    doc.setFont("helvetica", "bold");
-    doc.text("Service Configuration:", 20, 60);
-    doc.setFont("helvetica", "normal");
-    
-    let yPos = 70;
+    doc.text('Ren3Der', pageWidth / 2, 20, { align: 'center' });
+
+    // Date in dd/mm/yyyy
+    const now = new Date();
+    const dateStr = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth()+1).padStart(2, '0')}/${now.getFullYear()} (dd/mm/yyyy)`;
+    doc.setFontSize(11);
+    doc.setFont('courier', 'normal');
+    doc.text(`Date: ${dateStr}`, pageWidth / 2, 32, { align: 'center' });
+
+    // Section: Service Configuration
+    let yPos = 44;
+    doc.setFont('courier', 'bold');
+    doc.setFontSize(14);
+    doc.text('Service Configuration', pageWidth / 2, yPos, { align: 'center' });
+    yPos += 7;
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(11);
     if (currentConfig) {
       Object.entries(currentConfig).forEach(([key, value]) => {
-        if (key === "additionalFactors" && Array.isArray(value) && value.length > 0) {
-          doc.text("Additional Factors:", 30, yPos);
-          yPos += 8;
+        if (key === 'duration' && typeof value === 'number') {
+          const mins = Math.floor(value / 60);
+          const secs = value % 60;
+          let durationStr = '';
+          if (mins > 0) durationStr += `${mins} min`;
+          if (secs > 0 || mins === 0) durationStr += `${mins > 0 ? ' ' : ''}${secs} sec`;
+          doc.text(`duration: ${durationStr}`, pageWidth / 2, yPos, { align: 'center' });
+          yPos += 6;
+        } else if (key === 'additionalFactors' && Array.isArray(value) && value.length > 0) {
+          doc.text('Additional Factors:', pageWidth / 2, yPos, { align: 'center' });
+          yPos += 6;
           value.forEach((factor: string) => {
-            let label = "";
+            let label = '';
             switch (factor) {
-              case "characterAnimation": label = "Character Animation (+30%)"; break;
-              case "fluidSimulation": label = "Fluid Simulation (+40%)"; break;
-              case "photorealistic": label = "Photorealistic (+25%)"; break;
-              case "stylized": label = "Stylized (+15%)"; break;
-              case "rushJob": label = "Rush Job (+50%)"; break;
+              case 'characterAnimation': label = 'Character Animation (+30%)'; break;
+              case 'fluidSimulation': label = 'Fluid Simulation (+40%)'; break;
+              case 'photorealistic': label = 'Photorealistic (+25%)'; break;
+              case 'stylized': label = 'Stylized (+15%)'; break;
+              case 'rushJob': label = 'Rush Job (+50%)'; break;
               default: label = factor;
             }
-            doc.text(`- ${label}`, 36, yPos);
-            yPos += 7;
+            doc.text(`- ${label}`, pageWidth / 2, yPos, { align: 'center' });
+            yPos += 5;
           });
-        } else if (key !== "additionalFactors") {
-          doc.text(`${key}: ${value}`, 30, yPos);
-          yPos += 8;
+        } else if (key !== 'additionalFactors' && key !== 'duration' && value !== undefined) {
+          doc.text(`${key}: ${value}`, pageWidth / 2, yPos, { align: 'center' });
+          yPos += 6;
         }
       });
     }
-    
-    // Add pricing details
-    doc.setFont("helvetica", "bold");
-    doc.text("Pricing Details:", 20, yPos + 10);
-    doc.setFont("helvetica", "normal");
-    doc.text(`Base Price: ${currency} ${basePrice.toLocaleString()}`, 30, yPos + 20);
+
+    // Section: Pricing Details
+    yPos += 6;
+    doc.setFont('courier', 'bold');
+    doc.setFontSize(14);
+    doc.text('Pricing Details', pageWidth / 2, yPos, { align: 'center' });
+    yPos += 8;
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(11);
+    doc.text(`Base Price: ${currency} ${basePrice.toLocaleString()}`, pageWidth / 2, yPos, { align: 'center' });
+    yPos += 6;
     if (gstAmount > 0) {
-      doc.text(`GST (18%): ${currency} ${gstAmount.toLocaleString()}`, 30, yPos + 28);
+      doc.text(`GST (18%): ${currency} ${gstAmount.toLocaleString()}`, pageWidth / 2, yPos, { align: 'center' });
+      yPos += 6;
     }
-    doc.setFont("helvetica", "bold");
-    doc.text(`Total Price: ${currency} ${totalPrice.toLocaleString()}`, 30, yPos + 36);
-    
-    // Add footer
+
+    // Total price: bold and italic
+    yPos += 4;
+    doc.setFont('courier', 'bolditalic');
+    doc.setFontSize(13);
+    doc.setTextColor(255, 0, 0);
+    doc.text(`Total Amount: ${currency} ${totalPrice.toLocaleString()}`, pageWidth / 2, yPos + 4, { align: 'center' });
+    doc.setTextColor(0, 0, 0);
+    yPos += 22;
+
+    // Note: bold and italic
+    doc.setFont('courier', 'bolditalic');
+    doc.setFontSize(11);
+    doc.text('NOTE: 50% payment must be paid in advance to start designing.', pageWidth / 2, yPos + 9, { align: 'center' });
+    yPos += 24;
+
+    // Footer: Ren3Der centered
     doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    doc.text("Thank you for choosing 3D Price Craft", pageWidth/2, doc.internal.pageSize.getHeight() - 20, { align: "center" });
-    
-    // Save the PDF
-    doc.save("3D-Price-Craft-Quotation.pdf");
-    
+    doc.setFont('courier', 'bold');
+    doc.text('Ren3Der', pageWidth / 2, pageHeight - 12, { align: 'center' });
+
+    doc.save('Ren3Der.pdf');
     toast({
-      title: "Success",
-      description: "Your quotation has been downloaded successfully.",
+      title: 'Success',
+      description: 'Your quotation has been downloaded successfully.',
     });
   };
 

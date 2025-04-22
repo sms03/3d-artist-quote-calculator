@@ -218,7 +218,8 @@ const PricingCalculator = ({
               frameRate: showFrameRateSelector ? frameRate : undefined,
               dpi: showDpiSelector ? dpi : undefined,
               duration: showDurationSelector ? duration : undefined,
-              outputFormat
+              outputFormat,
+              additionalFactors // <-- ensure this is included
             }}
             basePrice={basePrice}
             gstAmount={gstAmount}
