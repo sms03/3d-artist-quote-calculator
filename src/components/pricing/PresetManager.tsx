@@ -73,7 +73,7 @@ const PresetManager = ({
     let yPos = 44;
     doc.setFont('courier', 'bold');
     doc.setFontSize(14);
-    doc.text('Service Configuration', pageWidth / 2, yPos, { align: 'center' });
+    doc.text('Service Quote', pageWidth / 2, yPos, { align: 'center' });
     yPos += 7;
     doc.setFont('courier', 'normal');
     doc.setFontSize(11);
@@ -143,7 +143,7 @@ const PresetManager = ({
     // Footer: Ren3Der centered
     doc.setFontSize(10);
     doc.setFont('courier', 'bold');
-    doc.text('Ren3Der', pageWidth / 2, pageHeight - 12, { align: 'center' });
+    doc.text('Thank You for choosing Ren3Der', pageWidth / 2, pageHeight - 12, { align: 'center' });
 
     doc.save('Ren3Der.pdf');
     toast({
