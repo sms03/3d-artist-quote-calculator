@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">3D Price Craft</h3>
+            <h3 className="text-lg font-semibold mb-3">Ren3Der</h3>
             <p className="text-sm text-gray-700 mb-4">
               Professional 3D design services with transparent pricing.
             </p>
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-400 mt-8 pt-6 text-center text-sm text-gray-600">
-          <p>© {currentYear} 3D Price Craft. All rights reserved.</p>
+          <p>© {currentYear} Ren3Der. All rights reserved.</p>
         </div>
       </div>
     </footer>

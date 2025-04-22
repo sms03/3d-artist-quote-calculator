@@ -38,7 +38,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2 min-w-fit">
           <div className="h-8 w-8 bg-gradient-to-br from-design-soft-pink to-design-soft-purple rounded-md" />
           <span className="font-bold bg-clip-text bg-gradient-primary text-[#fed7d0] text-lg whitespace-nowrap">
-            3D Price Craft
+            Ren3Der
           </span>
         </Link>
         {/* Desktop menu */}
