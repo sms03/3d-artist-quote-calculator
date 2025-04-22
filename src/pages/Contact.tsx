@@ -9,9 +9,9 @@ const Contact = () => (
       </p>
       <div className="bg-white rounded-2xl shadow p-6 mb-8">
         <h2 className="text-xl font-semibold mb-2">Email</h2>
-        <a href="mailto:contact@3dpricecraft.com" className="text-blue-600 underline">contact@3dpricecraft.com</a>
+        <a href="mailto:contact@3dpricecraft.com" className="text-blue-600 underline">smsxart@gmail.com</a>
         <h2 className="text-xl font-semibold mt-6 mb-2">Phone</h2>
-        <a href="tel:+911234567890" className="text-blue-600 underline">+91 1234567890</a>
+        <a href="tel:+911234567890" className="text-blue-600 underline">+91 7709478331</a>
         <h2 className="text-xl font-semibold mt-6 mb-2">Business Hours</h2>
         <p>Monday - Friday: 10:00 AM – 7:00 PM IST</p>
       </div>
