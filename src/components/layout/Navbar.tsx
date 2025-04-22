@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -14,6 +15,12 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") === "dark" || document.documentElement.classList.contains("dark");
+    }
+    return false;
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -21,12 +28,22 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
   return (
     <nav
       className={`transition-all duration-500 z-50 font-geist-mono shadow-lg
         ${scrolled
-          ? "top-0 left-1/2 w-[98vw] max-w-5xl rounded-full bg-white/80 backdrop-blur-xl h-20 px-12 border border-white/30 -translate-x-1/2"
-          : "top-6 left-1/2 w-[98vw] max-w-5xl rounded-full bg-white/50 backdrop-blur-2xl h-16 px-12 border border-white/30 -translate-x-1/2"
+          ? "top-3 left-1/2 w-[98vw] max-w-5xl rounded-full bg-white/80 backdrop-blur-xl h-20 px-12 border border-white/30 -translate-x-1/2"
+          : "top-5 left-1/2 w-[98vw] max-w-5xl rounded-full bg-white/50 backdrop-blur-2xl h-16 px-12 border border-white/30 -translate-x-1/2"
         }`}
       style={{
         position: "fixed",
@@ -53,6 +70,12 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+        {/* Dark mode toggle */}
+        <div className="hidden md:flex items-center ml-4">
+          <span className="mr-2 text-xs text-gray-600">🌞</span>
+          <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+          <span className="ml-2 text-xs text-gray-600">🌙</span>
+        </div>
         {/* Mobile menu button */}
         <div className="md:hidden flex items-center">
           <button
@@ -77,6 +100,12 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
+          {/* Dark mode toggle for mobile */}
+          <div className="flex items-center justify-center mt-2">
+            <span className="mr-2 text-xs text-gray-600">🌞</span>
+            <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+            <span className="ml-2 text-xs text-gray-600">🌙</span>
+          </div>
         </div>
       )}
     </nav>

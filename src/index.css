@@ -49,32 +49,45 @@
     min-height: 100vh;
   }
 
+  .dark body {
+    background: #09090b;
+    background-color: #09090b;
+    color: #f8fafc;
+  }
+
   .gradient-bg {
     background: linear-gradient(-45deg, #F2FCE2, #FFDEE2, #E5DEFF, #D3E4FD);
     background-size: 400% 400%;
     animation: gradient-flow 15s ease infinite;
   }
+
+  .dark .gradient-bg {
+    background: linear-gradient(-45deg, #18181b, #27272a, #18181b, #27272a);
+  }
+
   .interactive-sphere {
     background: radial-gradient(circle at 50% 50%, #FFDEE2, #E5DEFF);
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(229, 222, 255, 0.5);
     transition: transform 0.2s ease-out;
   }
+
   .service-card {
     transition: all 0.3s ease;
   }
+
   .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
-  .bg-plexus-overlay {
-    pointer-events: none;
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    opacity: 0.12;
-    background-image: repeating-linear-gradient(135deg, #e5deff33 0 2px, transparent 2px 40px), repeating-linear-gradient(45deg, #f2fce233 0 2px, transparent 2px 40px);
+
+  .dark .service-card {
+    background: #18181b !important;
+    color: #f8fafc !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   }
+
+
   .glassmorphic {
     background: rgba(255, 255, 255, 0.18);
     border-radius: 1.5rem;
@@ -82,5 +95,11 @@
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.24);
+  }
+
+  .dark .glassmorphic {
+    background: rgba(24, 24, 27, 0.7);
+    border: 1px solid rgba(30, 41, 59, 0.5);
+    color: #f8fafc;
   }
 }

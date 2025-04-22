@@ -4,7 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="relative bg-design-soft-gray text-gray-800 py-8 mt-20 font-geist-mono rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer
+      className="relative bg-white/80 soft:bg-gray-900/80 text-gray-800 soft:text-gray-200 py-8 mt-20 font-geist-mono rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-xl backdrop-blur-xl border border-white/30 dark:border-gray-800"
+      style={{ marginBottom: '2.5rem' }}
+    >
       <div className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
