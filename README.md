@@ -5,7 +5,8 @@ A modern 3D-Design Pricing Calculator and creative services platform.
 ## Screenshots
 
 <!-- Replace these with your actual screenshots in the public/ folder -->
-![Home Page](public/screenshot1.png)(public/screenshot3.png)
+![Home Page](public/screenshot1.png)
+![Home Page (Dark-Mode)](public/screenshot3.png)
 ![Pricing Calculator](public/screenshot2.png)
 
 ## Features
