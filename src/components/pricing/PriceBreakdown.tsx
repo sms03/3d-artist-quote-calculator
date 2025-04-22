@@ -42,10 +42,7 @@ const PriceBreakdown = ({
             <SelectItem value="USD">US Dollar ($)</SelectItem>
             <SelectItem value="EUR">Euro (€)</SelectItem>
             <SelectItem value="GBP">British Pound (£)</SelectItem>
-            <SelectItem value="AUD">Australian Dollar (A$)</SelectItem>
-            <SelectItem value="CAD">Canadian Dollar (C$)</SelectItem>
             <SelectItem value="JPY">Japanese Yen (¥)</SelectItem>
-            <SelectItem value="SGD">Singapore Dollar (S$)</SelectItem>
             <SelectItem value="AED">UAE Dirham (د.إ)</SelectItem>
             <SelectItem value="CNY">Chinese Yuan (¥)</SelectItem>
           </SelectContent>

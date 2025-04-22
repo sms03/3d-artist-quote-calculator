@@ -4,10 +4,7 @@ export const exchangeRates = {
   USD: 0.012,
   EUR: 0.011,
   GBP: 0.0094,
-  AUD: 0.018,
-  CAD: 0.016,
   JPY: 1.78,
-  SGD: 0.016,
   AED: 0.044,
   CNY: 0.086
 };
@@ -43,6 +40,8 @@ export const frameRateFactors = {
   "25fps (PAL)": 1,
   "30fps (NTSC)": 1.1,
   "60fps": 1.5,
+  "120fps": 2.2, // High Frame Rate, Slow Motion
+  "240fps": 3.5, // Ultra High Frame Rate, Slow Motion
   "Custom": 1.7
 };
 
@@ -113,7 +112,8 @@ export const calculatePrice = (
   duration: number = 0, // For videos/animations only
   frameRate: FrameRateOption = "25fps (PAL)", // For videos/animations only
   dpi: DpiOption = "150 (Standard)", // For still frames only
-  outputFormat: OutputFormatOption
+  outputFormat: OutputFormatOption,
+  textureQuality?: string // For 3D CGI only
 ): number => {
   // Get base price for the service
   const basePrice = basePrices[serviceType];
@@ -144,6 +144,17 @@ export const calculatePrice = (
   if (serviceType === "3D Still Frame") {
     const dpiFactor = dpiFactors[dpi];
     price *= dpiFactor;
+  }
+
+  // Apply texture quality factor for 3D CGI
+  if (serviceType === "3D CGI" && textureQuality) {
+    const textureMultipliers: Record<string, number> = {
+      "2K": 1,
+      "4K": 1.3,
+      "8K": 1.6,
+      "16K": 2,
+    };
+    price *= textureMultipliers[textureQuality] || 1;
   }
   
   // Round to nearest hundred
@@ -176,10 +187,7 @@ export const formatCurrency = (amount: number, currency: Currency): string => {
     USD: "$",
     EUR: "€",
     GBP: "£",
-    AUD: "A$",
-    CAD: "C$",
     JPY: "¥",
-    SGD: "S$",
     AED: "د.إ",
     CNY: "¥"
   };

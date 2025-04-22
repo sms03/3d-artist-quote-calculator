@@ -13,9 +13,9 @@ const CGIPage = () => {
         
         <PricingCalculator 
           serviceType="3D CGI"
-          showDpiSelector={true}
-          showFrameRateSelector={false}
-          showDurationSelector={false}
+          showDpiSelector={false}
+          showFrameRateSelector={true}
+          showDurationSelector={true}
         />
       </div>
       </section>

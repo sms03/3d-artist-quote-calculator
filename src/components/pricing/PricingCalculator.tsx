@@ -50,6 +50,8 @@ const PricingCalculator = ({
   const [duration, setDuration] = useState<number>(30);
   const [outputFormat, setOutputFormat] = useState<OutputFormatOption>("PNG");
   const [additionalFactors, setAdditionalFactors] = useState<string[]>([]);
+  // Texture quality state for CGI
+  const [textureQuality, setTextureQuality] = useState<string>("2K");
   
   // Currency and pricing state
   const [currency, setCurrency] = useState<Currency>("INR");
@@ -91,7 +93,8 @@ const PricingCalculator = ({
       duration,
       frameRate,
       dpi,
-      outputFormat
+      outputFormat,
+      serviceType === "3D CGI" ? textureQuality : undefined
     );
     // Apply additional factors multipliers
     additionalFactors.forEach(factor => {
@@ -100,7 +103,7 @@ const PricingCalculator = ({
     setBasePrice(price);
     setGstAmount(calculateGST(price, currency));
     setTotalPrice(calculateTotalWithGST(price, currency));
-  }, [serviceType, resolution, aspectRatio, duration, frameRate, dpi, outputFormat, currency, additionalFactors]);
+  }, [serviceType, resolution, aspectRatio, duration, frameRate, dpi, outputFormat, currency, additionalFactors, textureQuality]);
 
   // Preset management functions
   const handleSavePreset = (presetName: string) => {
@@ -194,6 +197,8 @@ const PricingCalculator = ({
           showDurationSelector={showDurationSelector}
           additionalFactors={additionalFactors}
           setAdditionalFactors={setAdditionalFactors}
+          textureQuality={serviceType === "3D CGI" ? textureQuality : undefined}
+          setTextureQuality={serviceType === "3D CGI" ? setTextureQuality : undefined}
         />
         
         <div>

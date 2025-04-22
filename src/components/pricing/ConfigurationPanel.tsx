@@ -22,6 +22,8 @@ interface ConfigurationPanelProps {
   showDurationSelector: boolean;
   additionalFactors: string[];
   setAdditionalFactors: (factors: string[]) => void;
+  textureQuality?: string;
+  setTextureQuality?: (value: string) => void;
 }
 
 const ADDITIONAL_FACTORS = [
@@ -51,6 +53,8 @@ const ConfigurationPanel = ({
   showDurationSelector,
   additionalFactors,
   setAdditionalFactors,
+  textureQuality,
+  setTextureQuality,
 }: ConfigurationPanelProps) => {
   const formatDuration = (seconds: number) => {
     if (seconds < 60) return `${seconds} seconds`;
@@ -105,28 +109,47 @@ const ConfigurationPanel = ({
               <SelectItem value="24fps (Film)">24fps (Film)</SelectItem>
               <SelectItem value="25fps (PAL)">25fps (PAL)</SelectItem>
               <SelectItem value="30fps (NTSC)">30fps (NTSC)</SelectItem>
-              <SelectItem value="60fps">60fps (High Frame Rate)</SelectItem>
+              <SelectItem value="60fps">60fps (High Frame Rate, Smooth)</SelectItem>
+              <SelectItem value="120fps">120fps (High Frame Rate, Slow Motion)</SelectItem>
+              <SelectItem value="240fps">240fps (Ultra High Frame Rate, Slow Motion)</SelectItem>
               <SelectItem value="Custom">Custom</SelectItem>
             </SelectContent>
           </Select>
         </div>
       )}
 
-      {showDpiSelector && (
+      {serviceType === "3D CGI" ? (
         <div>
-          <Label htmlFor="dpi">DPI (Resolution)</Label>
-          <Select value={dpi} onValueChange={(value) => setDpi(value as DpiOption)}>
-            <SelectTrigger id="dpi">
-              <SelectValue placeholder="Select DPI" />
+          <Label htmlFor="textureQuality">Texture Quality</Label>
+          <Select value={textureQuality || "2K"} onValueChange={setTextureQuality}>
+            <SelectTrigger id="textureQuality">
+              <SelectValue placeholder="Select Texture Quality" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="72 (Web)">72 DPI (Web)</SelectItem>
-              <SelectItem value="150 (Standard)">150 DPI (Standard)</SelectItem>
-              <SelectItem value="300 (Print)">300 DPI (Print)</SelectItem>
-              <SelectItem value="Custom">Custom</SelectItem>
+              <SelectItem value="2K">2K</SelectItem>
+              <SelectItem value="4K">4K</SelectItem>
+              <SelectItem value="8K">8K</SelectItem>
+              <SelectItem value="16K">16K</SelectItem>
             </SelectContent>
           </Select>
         </div>
+      ) : (
+        showDpiSelector && (
+          <div>
+            <Label htmlFor="dpi">DPI (Resolution)</Label>
+            <Select value={dpi} onValueChange={(value) => setDpi(value as DpiOption)}>
+              <SelectTrigger id="dpi">
+                <SelectValue placeholder="Select DPI" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="72 (Web)">72 DPI (Web)</SelectItem>
+                <SelectItem value="150 (Standard)">150 DPI (Standard)</SelectItem>
+                <SelectItem value="300 (Print)">300 DPI (Print)</SelectItem>
+                <SelectItem value="Custom">Custom</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        )
       )}
 
       {showDurationSelector && (
@@ -180,8 +203,12 @@ const ConfigurationPanel = ({
               <>
                 <SelectItem value="FBX">FBX</SelectItem>
                 <SelectItem value="OBJ">OBJ</SelectItem>
+                <SelectItem value="GLB">GLB</SelectItem>
+                <SelectItem value="STL">STL</SelectItem>
+                <SelectItem value="PLY">PLY</SelectItem>
+                <SelectItem value="USDZ">USDZ</SelectItem>
+                <SelectItem value="3DS">3DS</SelectItem>
                 <SelectItem value="BLEND">BLEND</SelectItem>
-                <SelectItem value="USD">USD</SelectItem>
               </>
             )}
           </SelectContent>
