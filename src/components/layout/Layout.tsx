@@ -1,7 +1,19 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import InteractiveSphere from "../ui/InteractiveSphere";
+
+interface InteractiveSphereProps {
+  className?: string;
+}
+
+const InteractiveSphere = ({ className }: InteractiveSphereProps) => {
+  // component logic
+  return (
+    <div className={className}>
+      {/* sphere rendering */}
+    </div>
+  );
+};
 
 interface LayoutProps {
   children: React.ReactNode;
