@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center h-full min-h-[3.5rem] px-2 md:px-6">
         <Link to="/" className="flex items-center gap-2 min-w-fit">
-          <div className="h-8 w-8 bg-gradient-to-br from-design-soft-pink to-design-soft-purple rounded-md" />
+          <img src="/logo.png" alt="Ren3Der Logo" className="h-8 w-8 object-contain rounded-md" />
           <span className="font-bold bg-clip-text bg-gradient-primary text-[#fed7d0] text-lg whitespace-nowrap">
             Ren3Der
           </span>
