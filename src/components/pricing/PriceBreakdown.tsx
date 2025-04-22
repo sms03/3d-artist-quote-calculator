@@ -1,4 +1,3 @@
-
 import { Currency } from "@/utils/pricingUtils";
 import { formatCurrency, convertCurrency } from "@/utils/pricingUtils";
 import { Label } from "@/components/ui/label";
@@ -11,7 +10,16 @@ interface PriceBreakdownProps {
   basePrice: number;
   gstAmount: number;
   totalPrice: number;
+  additionalFactors?: string[];
 }
+
+const FACTOR_LABELS: Record<string, string> = {
+  characterAnimation: "Character Animation (+30%)",
+  fluidSimulation: "Fluid Simulation (+40%)",
+  photorealistic: "Photorealistic (+25%)",
+  stylized: "Stylized (+15%)",
+  rushJob: "Rush Job (+50%)",
+};
 
 const PriceBreakdown = ({
   currency,
@@ -19,6 +27,7 @@ const PriceBreakdown = ({
   basePrice,
   gstAmount,
   totalPrice,
+  additionalFactors = [],
 }: PriceBreakdownProps) => {
   return (
     <div className="space-y-6">
@@ -50,6 +59,17 @@ const PriceBreakdown = ({
           <span>Base Price:</span>
           <span className="font-medium">{formatCurrency(convertCurrency(basePrice, "INR", currency), currency)}</span>
         </div>
+
+        {additionalFactors.length > 0 && (
+          <div className="mb-2">
+            <div className="font-geist-mono text-sm text-gray-700 mb-1">Additional Factors:</div>
+            <ul className="list-disc pl-5 text-xs text-gray-700">
+              {additionalFactors.map(factor => (
+                <li key={factor}>{FACTOR_LABELS[factor] || factor}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {currency === "INR" && (
           <div className="flex justify-between mb-2 font-geist-mono">

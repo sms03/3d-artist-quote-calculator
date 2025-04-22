@@ -21,6 +21,14 @@ import ConfigurationPanel from "./ConfigurationPanel";
 import PriceBreakdown from "./PriceBreakdown";
 import PresetManager from "./PresetManager";
 
+const ADDITIONAL_FACTORS_MULTIPLIERS: Record<string, number> = {
+  characterAnimation: 1.3,
+  fluidSimulation: 1.4,
+  photorealistic: 1.25,
+  stylized: 1.15,
+  rushJob: 1.5,
+};
+
 interface PricingCalculatorProps {
   serviceType: ServiceType;
   showDpiSelector?: boolean;
@@ -41,6 +49,7 @@ const PricingCalculator = ({
   const [dpi, setDpi] = useState<DpiOption>("150 (Standard)");
   const [duration, setDuration] = useState<number>(30);
   const [outputFormat, setOutputFormat] = useState<OutputFormatOption>("PNG");
+  const [additionalFactors, setAdditionalFactors] = useState<string[]>([]);
   
   // Currency and pricing state
   const [currency, setCurrency] = useState<Currency>("INR");
@@ -75,7 +84,7 @@ const PricingCalculator = ({
   
   // Calculate price whenever configuration changes
   useEffect(() => {
-    const price = calculatePrice(
+    let price = calculatePrice(
       serviceType,
       resolution,
       aspectRatio,
@@ -84,11 +93,14 @@ const PricingCalculator = ({
       dpi,
       outputFormat
     );
-    
+    // Apply additional factors multipliers
+    additionalFactors.forEach(factor => {
+      price *= ADDITIONAL_FACTORS_MULTIPLIERS[factor] || 1;
+    });
     setBasePrice(price);
     setGstAmount(calculateGST(price, currency));
     setTotalPrice(calculateTotalWithGST(price, currency));
-  }, [serviceType, resolution, aspectRatio, duration, frameRate, dpi, outputFormat, currency]);
+  }, [serviceType, resolution, aspectRatio, duration, frameRate, dpi, outputFormat, currency, additionalFactors]);
 
   // Preset management functions
   const handleSavePreset = (presetName: string) => {
@@ -178,6 +190,8 @@ const PricingCalculator = ({
           showDpiSelector={showDpiSelector}
           showFrameRateSelector={showFrameRateSelector}
           showDurationSelector={showDurationSelector}
+          additionalFactors={additionalFactors}
+          setAdditionalFactors={setAdditionalFactors}
         />
         
         <div>
@@ -187,6 +201,7 @@ const PricingCalculator = ({
             basePrice={basePrice}
             gstAmount={gstAmount}
             totalPrice={totalPrice}
+            additionalFactors={additionalFactors}
           />
           
           <PresetManager

@@ -1,4 +1,3 @@
-
 import { Currency, ServiceType, ResolutionOption, AspectRatioOption, FrameRateOption, DpiOption, OutputFormatOption } from "@/utils/pricingUtils";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
@@ -21,7 +20,17 @@ interface ConfigurationPanelProps {
   showDpiSelector: boolean;
   showFrameRateSelector: boolean;
   showDurationSelector: boolean;
+  additionalFactors: string[];
+  setAdditionalFactors: (factors: string[]) => void;
 }
+
+const ADDITIONAL_FACTORS = [
+  { label: "Character Animation (+30%)", value: "characterAnimation" },
+  { label: "Fluid Simulation (+40%)", value: "fluidSimulation" },
+  { label: "Photorealistic (+25%)", value: "photorealistic" },
+  { label: "Stylized (+15%)", value: "stylized" },
+  { label: "Rush Job (+50%)", value: "rushJob" },
+];
 
 const ConfigurationPanel = ({
   serviceType,
@@ -40,6 +49,8 @@ const ConfigurationPanel = ({
   showDpiSelector,
   showFrameRateSelector,
   showDurationSelector,
+  additionalFactors,
+  setAdditionalFactors,
 }: ConfigurationPanelProps) => {
   const formatDuration = (seconds: number) => {
     if (seconds < 60) return `${seconds} seconds`;
@@ -175,6 +186,28 @@ const ConfigurationPanel = ({
             )}
           </SelectContent>
         </Select>
+      </div>
+
+      <div>
+        <Label>Additional Factors</Label>
+        <div className="flex flex-col gap-2 mt-2">
+          {ADDITIONAL_FACTORS.map(factor => (
+            <label key={factor.value} className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={additionalFactors.includes(factor.value)}
+                onChange={e => {
+                  if (e.target.checked) {
+                    setAdditionalFactors([...additionalFactors, factor.value]);
+                  } else {
+                    setAdditionalFactors(additionalFactors.filter(f => f !== factor.value));
+                  }
+                }}
+              />
+              <span>{factor.label}</span>
+            </label>
+          ))}
+        </div>
       </div>
     </div>
   );
