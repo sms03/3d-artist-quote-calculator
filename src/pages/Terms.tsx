@@ -24,7 +24,7 @@ const Terms = () => (
       <h2 className="text-xl font-semibold mt-8 mb-2">7. Changes to Terms</h2>
       <p className="mb-4">We reserve the right to update these Terms at any time. Continued use of the service constitutes acceptance of the revised terms.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">8. Contact</h2>
-      <p>For questions, contact us at <a href="mailto:contact@3dpricecraft.com" className="text-blue-600 underline">contact@3dpricecraft.com</a>.</p>
+      <p>For questions, contact us at <a href="mailto:smsxart@gmail.com" className="text-blue-600 underline">smsxart@gmail.com</a>.</p>
     </div>
   </Layout>
 );

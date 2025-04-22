@@ -20,7 +20,7 @@ const PricingPolicy = () => (
       <h2 className="text-xl font-semibold mt-8 mb-2">5. Refund Policy</h2>
       <p className="mb-4">Advance payments are non-refundable once work has commenced. Refunds, if any, are at the sole discretion of 3D Price Craft based on project status and circumstances.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">6. Contact</h2>
-      <p>For pricing questions, contact us at <a href="mailto:contact@3dpricecraft.com" className="text-blue-600 underline">contact@3dpricecraft.com</a>.</p>
+      <p>For pricing questions, contact us at <a href="mailto:smsxart@gmail.com" className="text-blue-600 underline">smsxart@gmail.com</a>.</p>
     </div>
   </Layout>
 );
