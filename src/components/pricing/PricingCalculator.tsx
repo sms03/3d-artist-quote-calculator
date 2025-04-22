@@ -112,7 +112,8 @@ const PricingCalculator = ({
       dpi,
       duration,
       outputFormat,
-      currency
+      currency,
+      additionalFactors, // Save additional factors
     };
     
     savePresetUtil(presetName, presetData);
@@ -135,6 +136,7 @@ const PricingCalculator = ({
       setDuration(preset.duration);
       setOutputFormat(preset.outputFormat);
       setCurrency(preset.currency);
+      setAdditionalFactors(preset.additionalFactors || []); // Load additional factors
       
       toast({
         title: "Preset Loaded",

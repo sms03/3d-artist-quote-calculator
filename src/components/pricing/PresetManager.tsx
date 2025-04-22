@@ -70,8 +70,26 @@ const PresetManager = ({
     let yPos = 70;
     if (currentConfig) {
       Object.entries(currentConfig).forEach(([key, value]) => {
-        doc.text(`${key}: ${value}`, 30, yPos);
-        yPos += 8;
+        if (key === "additionalFactors" && Array.isArray(value) && value.length > 0) {
+          doc.text("Additional Factors:", 30, yPos);
+          yPos += 8;
+          value.forEach((factor: string) => {
+            let label = "";
+            switch (factor) {
+              case "characterAnimation": label = "Character Animation (+30%)"; break;
+              case "fluidSimulation": label = "Fluid Simulation (+40%)"; break;
+              case "photorealistic": label = "Photorealistic (+25%)"; break;
+              case "stylized": label = "Stylized (+15%)"; break;
+              case "rushJob": label = "Rush Job (+50%)"; break;
+              default: label = factor;
+            }
+            doc.text(`- ${label}`, 36, yPos);
+            yPos += 7;
+          });
+        } else if (key !== "additionalFactors") {
+          doc.text(`${key}: ${value}`, 30, yPos);
+          yPos += 8;
+        }
       });
     }
     
