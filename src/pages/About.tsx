@@ -23,6 +23,9 @@ const About = () => (
           <a href="https://www.linkedin.com/in/sms03" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline flex items-center gap-2">
             <span role="img" aria-label="LinkedIn">💼</span> LinkedIn
           </a>
+          <a href="/public/ResumeV5.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline flex items-center gap-2">
+            <span role="img" aria-label="Resume">📃</span> Resume
+          </a>
         </div>
       </div>
       <div className="text-gray-600 text-sm">
