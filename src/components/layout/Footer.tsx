@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-red-200 dark:text-red-300">Ren3Der</h3>
+            <h3 className="text-lg font-semibold mb-3 text-red-200 dark:text-red-300">Ren3Der.</h3>
             <p className="text-sm text-gray-700 mb-4">
               Professional 3D design services with transparent pricing.
             </p>

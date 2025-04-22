@@ -103,3 +103,31 @@
     color: #f8fafc;
   }
 }
+
+/* --- Custom fancy scrollbar styles (moved from App.css) --- */
+::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #cca3b2 0%, #8eb1c9 100%);
+  border-radius: 8px;
+  min-height: 40px;
+  border: 3px solid rgba(255,255,255,0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ca6985 0%, #74b6c5 100%);
+}
+::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 0.05);
+  border-radius: 8px;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #5778a3 #f3e6fa;
+}
+
+body {
+  scroll-behavior: smooth;
+}

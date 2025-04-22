@@ -55,7 +55,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2 min-w-fit">
           <img src="/logo.png" alt="Ren3Der Logo" className="h-8 w-8 object-contain rounded-md" />
           <span className="font-bold bg-clip-text bg-gradient-primary text-[#fed7d0] text-lg whitespace-nowrap">
-            Ren3Der
+            Ren3Der.
           </span>
         </Link>
         {/* Desktop menu */}
