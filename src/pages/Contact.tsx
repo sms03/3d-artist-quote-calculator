@@ -8,11 +8,11 @@ const Contact = () => (
         We'd love to hear from you! Please reach out with any questions, project inquiries, or feedback.
       </p>
       <div className="bg-white dark:bg-gray-900 rounded-2xl shadow p-6 mb-8">
-        <h2 className="text-xl font-semibold mb-2 dark:text-fuchsia-200">Email</h2>
+        <h2 className="text-xl font-semibold mb-2">Email</h2>
         <a href="mailto:smsxart@gmail.com" className="text-blue-600 dark:text-blue-400 underline">smsxart@gmail.com</a>
-        <h2 className="text-xl font-semibold mt-6 mb-2 dark:text-fuchsia-200">Phone</h2>
+        <h2 className="text-xl font-semibold mt-6 mb-2">Phone</h2>
         <a href="tel:+917709478331" className="text-blue-600 dark:text-blue-400 underline">+91 7709478331</a>
-        <h2 className="text-xl font-semibold mt-6 mb-2 dark:text-fuchsia-200">Business Hours</h2>
+        <h2 className="text-xl font-semibold mt-6 mb-2">Business Hours</h2>
         <p className="text-gray-700 dark:text-gray-300">Monday - Friday: 10:00 AM – 7:00 PM IST</p>
       </div>
       <div className="text-gray-600 dark:text-gray-400 text-sm">
