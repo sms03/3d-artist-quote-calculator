@@ -1,6 +1,22 @@
-# Welcome to your Lovable project
+# Ren3Der
 
-## Project info
+A modern 3D-Design Pricing Calculator and creative services platform.
+
+## Screenshots
+
+<!-- Replace these with your actual screenshots in the public/ folder -->
+![Home Page](public/screenshot1.png)(public/screenshot3.png)
+![Pricing Calculator](public/screenshot2.png)
+
+## Features
+- 3D Still Frame Artwork pricing
+- 3D Animations pricing
+- VFX Projects and Video Editing services
+- Interactive cursor trail effect
+- Responsive design
+- Built with Vite, React, TypeScript, shadcn-ui, and Tailwind CSS
+
+## Getting Started
 
 **Use your preferred IDE**
 
@@ -24,24 +40,7 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
+## Technologies Used
 - Vite
 - TypeScript
 - React
