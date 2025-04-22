@@ -66,7 +66,7 @@ const Navbar = () => {
       </div>
       {/* Mobile menu, show/hide based on menu state */}
       {isOpen && (
-        <div className="md:hidden px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/60 mt-2">
           {navItems.map(item => (
             <Link
               key={item.name}
