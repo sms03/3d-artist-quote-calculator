@@ -3,9 +3,9 @@ import Layout from "../components/layout/Layout";
 const About = () => (
   <Layout>
     <div className="max-w-2xl mx-auto py-20 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-design-soft-red">About Me</h1>
+      <h1 className="text-3xl font-bold mb-6 text-design-soft-red dark:text-fuchsia-300">About Me</h1>
       <div className="bg-white rounded-2xl shadow p-6 mb-8">
-        <h2 className="text-xl font-semibold mb-2">Shivam M. Salunkhe <span className="text-gray-500">aka SMS</span> ✨</h2>
+        <h2 className="text-xl font-semibold mb-2 dark:text-fuchsia-300">Shivam M. Salunkhe <span className="text-gray-500">aka SMS</span> ✨</h2>
         <p className="mb-4 text-lg text-gray-700">
           🎬 CG & VFX Artist<br/>
           💻 Software, Prompt, and AI Engineer

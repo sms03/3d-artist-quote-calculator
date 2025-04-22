@@ -3,8 +3,8 @@ import Layout from "../components/layout/Layout";
 const Terms = () => (
   <Layout>
     <div className="max-w-3xl mx-auto py-20">
-      <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
-      <p className="mb-4">Last updated: April 20, 2025</p>
+      <h1 className="text-3xl font-bold mb-6 dark:text-fuchsia-300">Terms of Service</h1>
+      <p className="mb-4">Last updated: April 21, 2025</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">1. Acceptance of Terms</h2>
       <p className="mb-4">By accessing or using 3D Price Craft, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree, please do not use our services.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">2. Services</h2>

@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 const PricingPolicy = () => (
   <Layout>
     <div className="max-w-3xl mx-auto py-20">
-      <h1 className="text-3xl font-bold mb-6">Pricing Policy</h1>
+      <h1 className="text-3xl font-bold mb-6 dark:text-fuchsia-300">Pricing Policy</h1>
       <p className="mb-4">Last updated: April 20, 2025</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">1. Estimates & Quotes</h2>
       <p className="mb-4">All prices provided by the calculator are estimates based on standard industry rates. Actual prices may vary depending on project requirements, complexity, revisions, and additional services.</p>
