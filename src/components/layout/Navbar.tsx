@@ -10,6 +10,7 @@ const navItems = [
   { name: "CGI", path: "/3d-cgi" },
   { name: "VFX", path: "/vfx-projects" },
   { name: "Video Editing", path: "/video-editing" },
+  { name: "My Work", path: "/my-work" },
 ];
 
 const Navbar = () => {
@@ -42,8 +43,8 @@ const Navbar = () => {
     <nav
       className={`transition-all duration-500 z-50 font-geist-mono shadow-lg
         ${scrolled
-          ? "top-3 left-1/2 w-[98vw] max-w-5xl rounded-full bg-white/80 backdrop-blur-xl h-20 px-12 border border-white/30 -translate-x-1/2"
-          : "top-5 left-1/2 w-[98vw] max-w-5xl rounded-full bg-white/50 backdrop-blur-2xl h-16 px-12 border border-white/30 -translate-x-1/2"
+          ? "top-3 left-1/2 w-[98vw] max-w-6xl rounded-full bg-white/80 backdrop-blur-xl h-20 px-12 border border-white/30 -translate-x-1/2"
+          : "top-5 left-1/2 w-[98vw] max-w-6xl rounded-full bg-white/50 backdrop-blur-2xl h-16 px-12 border border-white/30 -translate-x-1/2"
         }`}
       style={{
         position: "fixed",
