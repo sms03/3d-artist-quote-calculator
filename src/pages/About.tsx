@@ -8,7 +8,7 @@ const About = () => (
         <h2 className="text-xl font-semibold mb-2 dark:text-fuchsia-300">Shivam M. Salunkhe <span className="text-gray-500">aka SMS</span> ✨</h2>
         <p className="mb-4 text-lg text-gray-700">
           🎬 CG & VFX Artist<br/>
-          💻 Software, Prompt, and AI Engineer
+          💻 Software, Prompt, and AI Developer
         </p>
         <p className="text-gray-600 text-base mb-4">
           I am passionate about blending creativity and technology to deliver stunning visual experiences and innovative software solutions. With expertise in computer graphics, visual effects, and AI-driven workflows, I help bring ideas to life for clients and collaborators worldwide.
