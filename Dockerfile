@@ -1,5 +1,5 @@
 # Use official Node.js image for build
-FROM node:20-alpine AS builder
+FROM node:20-alpine3.19 AS builder
 
 WORKDIR /app
 
