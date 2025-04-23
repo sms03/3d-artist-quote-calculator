@@ -5,9 +5,9 @@ A modern 3D-Design Pricing Calculator and creative services platform.
 ## Screenshots
 
 <!-- Adjust width as needed (e.g., 500px) -->
-<img src="public/screenshot-1.png" alt="Home Page" width="500"/>
-<img src="public/screenshot-3.png" alt="Home Page (Dark-Mode)" width="500"/>
-<img src="public/screenshot-2.png" alt="Pricing Calculator" width="500"/>
+<img src="public/screenshot-1.png" alt="Home Page" width="600"/>
+<img src="public/screenshot-3.png" alt="Home Page (Dark-Mode)" width="600"/>
+<img src="public/screenshot-2.png" alt="Pricing Calculator" width="600"/>
 
 ## Features
 - 3D Still Frame Artwork pricing
