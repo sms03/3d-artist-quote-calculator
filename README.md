@@ -41,7 +41,19 @@ npm i
 npm run dev
 ```
 
-## Technologies Used
+## Docker
+
+You can build and run this app in a Docker container:
+
+```sh
+# Build the Docker image
+docker build -t ren3der-app .
+
+# Run the container (default: http://localhost:8080)
+docker run -p 8080:80 ren3der-app
+```
+
+## Techstack
 - Vite
 - TypeScript
 - React
