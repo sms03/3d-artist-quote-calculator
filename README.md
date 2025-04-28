@@ -5,9 +5,9 @@ A modern 3D-Design Pricing Calculator and creative services platform.
 ## Screenshots
 
 <!-- Adjust width as needed (e.g., 500px) -->
-<img src="public/screenshot-1.png" alt="Home Page" width="600"/>
-<img src="public/screenshot-3.png" alt="Home Page (Dark-Mode)" width="600"/>
-<img src="public/screenshot-2.png" alt="Pricing Calculator" width="600"/>
+<img src="public/screenshot-1.png" alt="Home Page" width="500"/>
+<img src="public/screenshot-3.png" alt="Home Page (Dark-Mode)" width="500"/>
+<img src="public/screenshot-2.png" alt="Pricing Calculator" width="500"/>
 
 ## Features
 - 3D Still Frame Artwork pricing
@@ -15,6 +15,7 @@ A modern 3D-Design Pricing Calculator and creative services platform.
 - VFX Projects and Video Editing services
 - Interactive cursor trail effect
 - Responsive design
+- Beautiful gallery of renders with modal view and grouping by style
 - Built with Vite, React, TypeScript, shadcn-ui, and Tailwind CSS
 
 ## Getting Started
@@ -53,9 +54,36 @@ docker build -t ren3der-app .
 docker run -p 8080:80 ren3der-app
 ```
 
-## Techstack
+## Technologies Used
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Project Structure
+
+The project is organized as follows:
+- `src/`: Contains the source code for the application
+  - `components/`: Reusable UI components (e.g., buttons, modals, navigation)
+  - `pages/`: Individual pages of the application (e.g., Home, My Work, Pricing)
+  - `hooks/`: Custom React hooks
+  - `utils/`: Utility functions
+- `public/`: Static assets (e.g., images, icons, PDFs)
+- `Dockerfile`: Configuration for building and running the app in a Docker container
+- `tailwind.config.ts`: Tailwind CSS configuration
+- `vite.config.ts`: Vite configuration
+
+## Gallery Features
+- Displays a beautiful, responsive gallery of renders
+- Supports all image formats (e.g., jpg, png, webp)
+- Interactive modal for viewing images in full size
+- Groups images by style for easy navigation
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
